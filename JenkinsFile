@@ -1,6 +1,8 @@
 pipeline {
     agent { label 'jdk11-mvn3.8.4' }
-    options([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '2'))])
+     options {
+    buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '2'))
+  }
     triggers { 
         cron('5 * * * *')
         pollSCM('*/5 * * * *')
