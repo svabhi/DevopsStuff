@@ -1,9 +1,8 @@
 pipeline {
     agent { label 'jdk11-mvn3.8.4' }
     triggers { 
-        cron('2 * * * *')
-        'pollSCM('4 * * * *')
-    }
+        cron('3 * * * *')
+       
     parameters {
         string(name: 'MAVEN_GOAL', defaultValue: 'package', description: 'This is maven goal' )
         choice(name: 'BRANCH_TO_BUILD', choices: ['declarative', 'master', 'scripted'], description: 'Branch to build')
