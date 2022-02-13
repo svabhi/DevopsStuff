@@ -1,0 +1,5 @@
+@Library('sharedlib@master') _
+node
+{
+    myfirstcode("IndiaBees")
+} 
